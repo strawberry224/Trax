@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C69C7FE21C564AD3003175F0 /* GPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C7FE11C564AD3003175F0 /* GPX.swift */; };
+		C68162EA1C57295100759124 /* GPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68162E91C57295100759124 /* GPX.swift */; };
 		C69C7FE41C565561003175F0 /* MKGPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C7FE31C565561003175F0 /* MKGPX.swift */; };
 		C69C7FE61C566A53003175F0 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C7FE51C566A53003175F0 /* ImageViewController.swift */; };
 		C6F0140C1C52021D000623FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F0140B1C52021D000623FA /* AppDelegate.swift */; };
@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C69C7FE11C564AD3003175F0 /* GPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GPX.swift; path = "../../../../Downloads/Trax MapKit/Trax/GPX.swift"; sourceTree = "<group>"; };
+		C68162E91C57295100759124 /* GPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GPX.swift; path = ../GPX.swift; sourceTree = "<group>"; };
 		C69C7FE31C565561003175F0 /* MKGPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGPX.swift; sourceTree = "<group>"; };
 		C69C7FE51C566A53003175F0 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		C6F014081C52021D000623FA /* Trax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trax.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,8 +103,8 @@
 		C6F0140A1C52021D000623FA /* Trax */ = {
 			isa = PBXGroup;
 			children = (
+				C68162E91C57295100759124 /* GPX.swift */,
 				C6F0140B1C52021D000623FA /* AppDelegate.swift */,
-				C69C7FE11C564AD3003175F0 /* GPX.swift */,
 				C6F0140D1C52021D000623FA /* GPXViewController.swift */,
 				C69C7FE51C566A53003175F0 /* ImageViewController.swift */,
 				C69C7FE31C565561003175F0 /* MKGPX.swift */,
@@ -272,7 +272,7 @@
 				C69C7FE41C565561003175F0 /* MKGPX.swift in Sources */,
 				C69C7FE61C566A53003175F0 /* ImageViewController.swift in Sources */,
 				C6F0140C1C52021D000623FA /* AppDelegate.swift in Sources */,
-				C69C7FE21C564AD3003175F0 /* GPX.swift in Sources */,
+				C68162EA1C57295100759124 /* GPX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
