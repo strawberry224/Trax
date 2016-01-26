@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C68162EA1C57295100759124 /* GPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68162E91C57295100759124 /* GPX.swift */; };
+		C68162EC1C574E4400759124 /* EditWaypointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68162EB1C574E4400759124 /* EditWaypointViewController.swift */; };
 		C69C7FE41C565561003175F0 /* MKGPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C7FE31C565561003175F0 /* MKGPX.swift */; };
 		C69C7FE61C566A53003175F0 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C7FE51C566A53003175F0 /* ImageViewController.swift */; };
 		C6F0140C1C52021D000623FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F0140B1C52021D000623FA /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		C68162E91C57295100759124 /* GPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GPX.swift; path = ../GPX.swift; sourceTree = "<group>"; };
+		C68162EB1C574E4400759124 /* EditWaypointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditWaypointViewController.swift; path = ../EditWaypointViewController.swift; sourceTree = "<group>"; };
 		C69C7FE31C565561003175F0 /* MKGPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGPX.swift; sourceTree = "<group>"; };
 		C69C7FE51C566A53003175F0 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		C6F014081C52021D000623FA /* Trax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trax.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,7 @@
 		C6F0140A1C52021D000623FA /* Trax */ = {
 			isa = PBXGroup;
 			children = (
+				C68162EB1C574E4400759124 /* EditWaypointViewController.swift */,
 				C68162E91C57295100759124 /* GPX.swift */,
 				C6F0140B1C52021D000623FA /* AppDelegate.swift */,
 				C6F0140D1C52021D000623FA /* GPXViewController.swift */,
@@ -270,6 +273,7 @@
 			files = (
 				C6F0140E1C52021D000623FA /* GPXViewController.swift in Sources */,
 				C69C7FE41C565561003175F0 /* MKGPX.swift in Sources */,
+				C68162EC1C574E4400759124 /* EditWaypointViewController.swift in Sources */,
 				C69C7FE61C566A53003175F0 /* ImageViewController.swift in Sources */,
 				C6F0140C1C52021D000623FA /* AppDelegate.swift in Sources */,
 				C68162EA1C57295100759124 /* GPX.swift in Sources */,
