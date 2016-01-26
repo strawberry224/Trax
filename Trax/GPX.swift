@@ -2,11 +2,9 @@
 //  GPX.swift
 //  Trax
 //
-//  Created by CS193p Instructor.
-//  Copyright (c) 2015 Stanford University. All rights reserved.
+//  Created by Shen Lijia on 16/1/22.
+//  Copyright © 2016年 ShenLijia. All rights reserved.
 //
-//  Very simple GPX file parser.
-//  Only verified to work for CS193p demo purposes!
 
 import Foundation
 
