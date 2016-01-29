@@ -42,6 +42,10 @@ class GPXViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentat
     }
     
     private struct Constants {
+        static let PartialTrackColor = UIColor.greenColor()
+        static let FullTrackColor = UIColor.blueColor().colorWithAlphaComponent(0.5)
+        static let TrackLineWidth: CGFloat = 3.0
+        static let ZoomCooldown = 1.5
         static let LeftCalloutFrame = CGRect(x: 0, y: 0, width: 59, height: 59)
         static let AnnotationViewReuseIdentifier = "waypoint"
         static let ShowImageSegue = "Show Image"
@@ -59,7 +63,7 @@ class GPXViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentat
             view!.annotation = annotation
         }
         
-        view!.draggable = annotation is EditableWaypoint
+        view?.draggable = annotation is EditableWaypoint
         
         view!.leftCalloutAccessoryView = nil
         view!.rightCalloutAccessoryView = nil
@@ -68,7 +72,7 @@ class GPXViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentat
                 view!.leftCalloutAccessoryView = UIButton(frame: Constants.LeftCalloutFrame)
             }
             if annotation is EditableWaypoint {
-                view!.rightCalloutAccessoryView = UIButton(type: UIButtonType.DetailDisclosure) as UIButton
+                view!.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
             }
         }
         
@@ -81,6 +85,7 @@ class GPXViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentat
             let coordinate = mapView.convertPoint(sender.locationInView(mapView), toCoordinateFromView: mapView)
             let waypoint = EditableWaypoint(latitude: coordinate.latitude, longitude: coordinate.longitude)
             waypoint.name = "Dropped"
+//            waypoint.links.append(GPX.Link(href: "http://cs193p.stanford.edu/Images/Panorama.jpg"))
             mapView.addAnnotation(waypoint)
         }
     }
@@ -100,7 +105,9 @@ class GPXViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentat
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.ShowImageSegue {
             if let waypoint = (sender as? MKAnnotationView)?.annotation as? GPX.Waypoint {
-                if let ivc = segue.destinationViewController.contentViewController as? ImageViewController {
+                if let wivc = segue.destinationViewController.contentViewController as? WaypointImageViewController {
+                    wivc.waypoint = waypoint
+                } else if let ivc = segue.destinationViewController.contentViewController as? ImageViewController {
                     ivc.imageURL = waypoint.imageURL
                     ivc.title = waypoint.name
                 }
@@ -136,10 +143,15 @@ class GPXViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentat
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
         if let waypoint =  view.annotation as? GPX.Waypoint {
-            if let thumbnailImageButton = view.leftCalloutAccessoryView as? UIButton {
-                if let imageData = NSData(contentsOfURL: waypoint.thumbnailURL!) {
-                    if let image = UIImage(data: imageData) {
-                        thumbnailImageButton.setImage(image, forState: .Normal)
+            if let url = waypoint.thumbnailURL {
+                if view.leftCalloutAccessoryView == nil {
+                    view.leftCalloutAccessoryView = UIButton(frame: Constants.LeftCalloutFrame)
+                }
+                if let thumbnailImageButton = view.leftCalloutAccessoryView as? UIButton {
+                    if let imageData = NSData(contentsOfURL: url) {
+                        if let image = UIImage(data: imageData) {
+                            thumbnailImageButton.setImage(image, forState: .Normal)
+                        }
                     }
                 }
             }
@@ -183,4 +195,5 @@ extension MKAnnotationView {
         return CGRect(origin: popoverSourceRectCenter, size: frame.size)
     }
 }
+
 
